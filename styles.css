@@ -59,6 +59,14 @@ body {
     
 }
 
+.clear-button {
+    background-color: #134d71;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 header {
     padding-bottom: 40px;
 }

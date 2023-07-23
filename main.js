@@ -38,6 +38,7 @@ var mantras = [
 
 const messageButton = document.querySelector(".message-button");
 const form = document.querySelector("#form1");
+const clearButton = document.querySelector(".clear-button");
 var affirmationLine = document.querySelector(".affirmation");
 var mantraLine = document.querySelector(".mantra");
 var bellImage = document.querySelector(".bell-image");
@@ -50,31 +51,35 @@ var randomAffirmation = affirmations[getRandomIndex(affirmations)];
 // Event Listeners
 
 messageButton.addEventListener("click", submitForm);
-
+clearButton.addEventListener("click", reloadPage);
 
 // Functions
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length)
-}
-
-function mantraClick(){
-
-}
+ }
 
 function submitForm(){
     mantraLine.innerText = randomMantra;
     affirmationLine.innerText = randomAffirmation;
-    bellImage.classList.toggle("hidden", true);
+    event.preventDefault();
     if (mantraChoice.checked){
+        clearButton.classList.toggle("hidden", false);
+        bellImage.classList.toggle("hidden", true);
          mantraLine.classList.toggle("hidden", false);
          affirmationLine.classList.toggle("hidden", true);
     }
     if (affirmationChoice.checked){
+        clearButton.classList.toggle("hidden", false);
+        bellImage.classList.toggle("hidden", true);
         mantraLine.classList.toggle("hidden", true);
         affirmationLine.classList.toggle("hidden", false);
     }
-    event.preventDefault();
+}
+
+function reloadPage(){
+    window.location.reload();
+
 }
 
 
