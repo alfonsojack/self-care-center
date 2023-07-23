@@ -37,15 +37,47 @@ var mantras = [
 // Variables
 
 const messageButton = document.querySelector(".message-button");
+const form = document.querySelector("#form1");
 var affirmationLine = document.querySelector(".affirmation");
 var mantraLine = document.querySelector(".mantra");
 var bellImage = document.querySelector(".bell-image");
+var affirmationChoice = document.getElementById("affirmation-choice");
+var mantraChoice = document.getElementById("mantra-choice");
 
 var randomMantra = mantras[getRandomIndex(mantras)];
 var randomAffirmation = affirmations[getRandomIndex(affirmations)];
+
+// Event Listeners
+
+messageButton.addEventListener("click", submitForm);
+
 
 // Functions
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length)
 }
+
+function mantraClick(){
+
+}
+
+function submitForm(){
+    mantraLine.innerText = randomMantra;
+    affirmationLine.innerText = randomAffirmation;
+    bellImage.classList.toggle("hidden", true);
+    if (mantraChoice.checked){
+         mantraLine.classList.toggle("hidden", false);
+         affirmationLine.classList.toggle("hidden", true);
+    }
+    if (affirmationChoice.checked){
+        mantraLine.classList.toggle("hidden", true);
+        affirmationLine.classList.toggle("hidden", false);
+    }
+    event.preventDefault();
+}
+
+
+
+
+

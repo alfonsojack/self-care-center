@@ -34,13 +34,28 @@ body {
 }
 
 .radio-inline {
-    display: inline-flex;
+    display: inline-block;
     padding: 20px;
+    font-family: 'Quicksand', sans-serif;
+    margin-inline: 55px;
+}
+
+#mantra-choice{
+    margin-right: 10px;
+}
+
+#affirmation-choice {
+    margin-right: 10px;
 }
 
 .message-button {
     background-color: #134d71;
     color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
     
 }
 
@@ -52,7 +67,7 @@ header {
     background-color: white;
     border: black;
     border-radius: 15px;
-    width: 500px;
+    width: 600px;
     height: 100px;
     text-align: center;
     justify-content: center;
@@ -60,8 +75,17 @@ header {
     padding-top: 30px;
     padding-left: 60px;
     padding-right: 60px;
+    margin-top: 150px;
 }
 
 .hidden {
     display: none
+}
+
+.affirmation {
+    text-align: center;
+}
+
+.mantra {
+    text-align: center;
 }
